@@ -1,0 +1,19 @@
+{
+  "user_profiles": "user_profiles",
+  "categories": "categories",
+  "brands": "brands",
+  "suppliers": "suppliers",
+  "clients": "clients",
+  "warehouses": "warehouses",
+  "products": "products",
+  "movements": "movements",
+  "sales": "sales",
+  "sale_items": "sale_items",
+  "purchases": "purchases",
+  "purchase_items": "purchase_items",
+  "inventories": "inventories",
+  "inventory_items": "inventory_items",
+  "shipments": "shipments",
+  "audit_logs": "audit_logs",
+  "settings": "settings"
+}

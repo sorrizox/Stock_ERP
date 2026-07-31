@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1784894446685,
+      "tag": "0000_low_sunfire",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1784894484550,
+      "tag": "0001_luxuriant_justin_hammer",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1785249910577,
+      "tag": "0002_outgoing_princess_powerful",
+      "breakpoints": true
+    }
+  ]
+}
