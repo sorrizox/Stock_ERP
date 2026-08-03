@@ -42,3 +42,8 @@ next-env.d.ts
 /.sites-runtime/
 /outputs/
 /work/
+
+# Arquivos temporários do Microsoft Word
+~$*.docx
+~$*.doc
+*.tmp
