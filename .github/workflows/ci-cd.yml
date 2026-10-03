@@ -1,0 +1,65 @@
+name: CI/CD - Stock ERP
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  testes:
+    name: Testes e validação
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar projeto
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Executar testes
+        run: npm test
+
+  artefato:
+    name: Gerar artefato
+    needs: testes
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar projeto
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Gerar build
+        run: npm run build
+
+      - name: Criar pacote do projeto
+        run: |
+          mkdir stock-erp-build
+          cp -r build stock-erp-build/ 2>/dev/null || true
+          cp package.json stock-erp-build/
+          cp package-lock.json stock-erp-build/
+          zip -r Stock_ERP.zip stock-erp-build
+
+      - name: Publicar artefato
+        uses: actions/upload-artifact@v4
+        with:
+          name: Stock-ERP
+          path: Stock_ERP.zip
